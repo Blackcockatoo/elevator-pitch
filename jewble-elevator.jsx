@@ -283,23 +283,21 @@ export default function JewbleElevator() {
             boxShadow: `0 0 40px rgba(4,7,26,0.8), inset 0 0 80px rgba(0,0,0,0.5)`,
           }}>
             {/* Corner brackets */}
-            {[["0,0","20px,0","0,20px"],["0,0","0,20px","20px,0"].map(v=>v)].map((_, qi) => (
-              ["top-left","top-right","bottom-left","bottom-right"].map(corner => (
-                <div key={corner} style={{
-                  position: "absolute",
-                  [corner.includes("top") ? "top" : "bottom"]: 0,
-                  [corner.includes("left") ? "left" : "right"]: 0,
-                  width: "20px", height: "20px",
-                  borderTop: corner.includes("top") ? `2px solid ${floor.color}` : "none",
-                  borderBottom: corner.includes("bottom") ? `2px solid ${floor.color}` : "none",
-                  borderLeft: corner.includes("left") ? `2px solid ${floor.color}` : "none",
-                  borderRight: corner.includes("right") ? `2px solid ${floor.color}` : "none",
-                  opacity: 0.6,
-                  transition: "border-color 0.5s",
-                  zIndex: 5,
-                  pointerEvents: "none",
-                }} />
-              ))
+            {["top-left", "top-right", "bottom-left", "bottom-right"].map((corner) => (
+              <div key={corner} style={{
+                position: "absolute",
+                [corner.includes("top") ? "top" : "bottom"]: 0,
+                [corner.includes("left") ? "left" : "right"]: 0,
+                width: "20px", height: "20px",
+                borderTop: corner.includes("top") ? `2px solid ${floor.color}` : "none",
+                borderBottom: corner.includes("bottom") ? `2px solid ${floor.color}` : "none",
+                borderLeft: corner.includes("left") ? `2px solid ${floor.color}` : "none",
+                borderRight: corner.includes("right") ? `2px solid ${floor.color}` : "none",
+                opacity: 0.6,
+                transition: "border-color 0.5s",
+                zIndex: 5,
+                pointerEvents: "none",
+              }} />
             ))}
 
             {/* Door panels - slide left and right */}
